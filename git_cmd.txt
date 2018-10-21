@@ -1,0 +1,144 @@
+1.Git操作
+git clone XXXXX:将GitHub项目XXXXX克隆到本地
+
+git remote –v:查看远程连接信息
+
+git checkout XX:进入XX分支
+
+git checkout –b XX:创建并进入XX分支
+
+git checkout –b ZZ YY/XX:从YY远程连接中将XX分支拉取到本地ZZ分支
+
+git branch:查看当前本地所有分支以及当前在哪个分支
+
+git branch –d XX:删除本地的XX分支
+
+git remote update:查看远程有但本地没有的分支
+
+git fetch:将远程有但本地没有的分支拉取到本地(执行这句代码前必须先执行git remote update)
+
+git diff XX:查看自动上次提交之后XX文件做了什么更改
+
+ 
+
+git log:查看历史操作记录(每条记录都有多行)
+
+git log --pretty=oneline:查看历史操作记录(每条记录都简化到一行)
+
+ 
+
+git reset --hard HEAD~N:回退到N个版本之前的版本
+
+git reset XXXXXXXXX:回退到以“XXXXXXXXX”作为commit id的版本
+
+ 
+
+git status:查看当前仓库的状态(没有提交的文件信息等)
+
+ 
+
+git add XX:将XX文件/文件夹添加到暂存(XX可以是一个文件,也可以是多个文件,也可以是一个文件夹)
+
+git add all:将当前仓库中所有没有暂存的文件添加到暂存
+
+ 
+
+git commit –m “XXX”:将暂存中的内容提交到本地仓库,并以“XXX”作为提交说明
+
+ 
+
+git merge –m “XXX” YY:将YY分支合并到当前分支中,并以“XXX”作为合并说明,同时删除YY分支
+
+git merge –no-ff –m “XXX” YY:将YY分支合并到当前分支中,并以“XXX”作为合并说明,不删除YY分支
+
+ 
+
+git pull:从远程仓库拉取项目的最新版本(当前在本地的哪个分支,就从远程的哪个分支拉取)
+
+ 
+
+git push XX YY:将当前分支中的内容push到XX远程连接的YY分支中
+
+ 
+
+2.文件目录操作
+ls:查看当前目录下的所有文件
+
+ls –l:查看当前目录下所有文件的详细信息
+
+ls –a:查看当前目录下所有文件,包括隐藏文件
+
+ 
+
+pwd:查看当前在哪个目录
+
+ 
+
+cd XX:跳转到XX目录中去
+
+cd ..:返回上层目录
+
+cd:跳转到电脑根目录,Windows系统下跳转到“Users/用户”目录下
+
+ 
+
+touch XX:创建一个名为XX的文件(如果文件已存在,则不进行任何操作)
+
+ 
+
+mkdir XX:创建一个名为XX的文件夹(如果文件夹已存在,则不进行任何操作)
+
+ 
+
+cat XX:查看XX文件中的内容(只能查看非目录文件中的内容)
+
+ 
+
+rm XX:删除XX文件
+
+rm –r XX:删除XX文件夹(同时递归删除其下所有文件)
+
+ 
+
+cp XX YY ZZ:复制XX和YY文件到ZZ文件夹下
+
+cp –r XX YY:复制XX文件夹及其下所有文件的内容到YY文件夹下
+
+ 
+
+mv XX YY:将XX文件改名为YY
+
+mv XX YY/ZZ:将XX文件剪切到YY目录下并改名为ZZ
+
+
+
+head –n XX:显示XX文件的前n行文本
+
+tail –n XX:显示XX文件的最后n行文本
+
+ 
+
+3.文件读写操作
+vim XX:进入XX文件的编辑页面(下面的命令都是在vim页面执行的)
+
+a或A或i或I或o或O:开始编辑文件文本(只有在编辑模式下才能对文本进行增删改)
+
+esc:退出文本编辑
+
+gg:返回文件开头
+
+Shift + g:直接到文件结尾
+
+u:撤销
+
+:w:保存修改
+
+:w XX:另存成XX文件
+
+:q:退出vim(如果对文本进行了修改,则不能退出)
+
+:q!:不保存修改,强制退出vim
+
+:wq:保存并退出vim
+
+:x:保存并退出vim
